@@ -18,7 +18,3 @@ end
 arr.sort.each do |ingredient|
   Ingredient.create(name: ingredient)
 end
-
-
-Cocktail.create(name: "Secret", description: "Full of surprises")
-Cocktail.create(name: "Mojito Thai", description: "Exotic Mojito")

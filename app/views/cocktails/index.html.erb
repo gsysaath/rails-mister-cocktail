@@ -6,11 +6,15 @@
 </div>
 
 <ul class="card1-list">
-  <h2 class="display-2">SIGNATURES</h2>
+  <h2 class="display-2">COCKTAILS</h2>
   <% @cocktails.each do |cocktail| %>
     <li class="card1">
       <%= link_to cocktail_path(cocktail), class: "card1-image" do %>
-        <%= image_tag "https://www.unitedstatesofparis.com/wp-content/uploads/2017/12/Secret-8-by-Buddha-Bar-Paris-cocktail-Snowy-Venezia-prosecco-punt-mes-ginger-beer-sirop-maison-saveurs-vin-chaud-hoto-usofparis-blog.jpg" %>
+        <% if cocktail.photo.attached? %>
+          <%= cl_image_tag cocktail.photo.key %>
+        <% else %>
+          <%= image_tag "https://www.unitedstatesofparis.com/wp-content/uploads/2017/12/Secret-8-by-Buddha-Bar-Paris-cocktail-Snowy-Venezia-prosecco-punt-mes-ginger-beer-sirop-maison-saveurs-vin-chaud-hoto-usofparis-blog.jpg" %>
+        <% end %>
       <% end %>
       <%= link_to cocktail_path(cocktail), class: "card1-description" do %>
         <h2><%= cocktail.name.upcase %></h2>

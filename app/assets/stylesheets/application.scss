@@ -54,13 +54,14 @@ h1, h2 {
 .card1-image {
   display: block;
   min-height: 20rem; /* layout hack */
-  background: #fff center center no-repeat;
+  background: #B2B2B2 center center no-repeat;
   background-size: cover;
 }
 
 .card1-image > img {
   display: block;
   width: 100%; /* visually hide the img element */
+  background-color: rgba(0,0,0,0.3);
 }
 
 /* Layout Styles */
