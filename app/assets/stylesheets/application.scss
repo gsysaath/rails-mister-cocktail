@@ -90,6 +90,7 @@ body {
   font-size: 1rem;
   text-decoration: none;
   box-shadow: 0 0 3rem -1rem rgba(0,0,0,0.7);
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s;
 }
 
 .card1-description {
@@ -109,4 +110,11 @@ body {
 
 a:hover {
   color: #9a031e;
+}
+
+
+
+.card1:hover {
+  transform: translateY(-0.5rem) scale(1.0125);
+  box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5);
 }
