@@ -16,3 +16,5 @@ import "@fortawesome/fontawesome-free/js/all";
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+// This is "probably" IE9 compatible but will need some fallbacks for IE8
+// - (event listeners, forEach loop)

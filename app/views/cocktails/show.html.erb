@@ -1,8 +1,7 @@
 <div class="container">
   <h1 class="text-center display-1 text-warning"><%= @cocktail.name.upcase %></h1>
-  <p class="text-blue text-center"><%= @cocktail.name %> Description</p>
   <div class="row">
-    <div class="col-12 d-flex justify-content-center">
+    <div class="col-6">
       <div class="card my-2" style="width: 28rem;">
         <img class="card-img-top" src="https://www.remymartin.com/wp-content/uploads/2016/07/15_Sidecar-2-1024x524.jpg" alt="Card image cap">
         <div class="card-body">
@@ -22,9 +21,25 @@
         </div>
       </div>
     </div>
-    <div class="col-12 d-flex justify-content-center">
-      <p><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail.id), class: "mx-1 text-warning text-decoration-none btn btn-outline-warning" %></p>
-      <p><%= link_to "Back to index", root_path, class: "mx-1 text-warning text-decoration-none btn btn-outline-warning" %></p>
+    <div class="col-6 d-flex justify-content-center">
+      <div class="row">
+        <% @cocktail.doses.each do |dose| %>
+          <p class="card-text">  <%= dose.description %>
+          <%= Ingredient.find(dose.ingredient_id).name %>
+          <%= link_to dose_path(dose),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "ml-3 text-warning" do %>
+                  <i class="far fa-trash-alt"></i>
+
+                  <% end %>
+                </p>
+
+        <% end %>
+      </div>
+      <div class="row">
+        <p><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail.id), class: "mx-1 text-warning text-decoration-none btn btn-outline-warning" %></p>
+        <p><%= link_to "Back to index", root_path, class: "mx-1 text-warning text-decoration-none btn btn-outline-warning" %></p>
+      </div>
     </div>
   </div>
 </div>

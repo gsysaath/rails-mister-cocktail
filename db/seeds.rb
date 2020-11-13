@@ -11,28 +11,14 @@ Ingredient.destroy_all
 
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 parse = JSON.parse(open(url).read)
+arr = []
 parse["drinks"].each do |ingredient|
-  Ingredient.create(name: ingredient["strIngredient1"])
+  arr << ingredient["strIngredient1"]
+end
+arr.sort.each do |ingredient|
+  Ingredient.create(name: ingredient)
 end
 
-Cocktail.create(name: "Mojito")
-Cocktail.create(name: "Bloody Mary")
-Cocktail.create(name: "Sex on the Beach")
-Cocktail.create(name: "Margarita")
-Cocktail.create(name: "Pinacolada")
 
-Dose.create(description: "2 cl", cocktail_id: 1, ingredient_id: 1)
-Dose.create(description: "2 cl", cocktail_id: 1, ingredient_id: 2)
-Dose.create(description: "2 cl", cocktail_id: 1, ingredient_id: 3)
-Dose.create(description: "2 cl", cocktail_id: 1, ingredient_id: 4)
-Dose.create(description: "2 cl", cocktail_id: 1, ingredient_id: 5)
-Dose.create(description: "2 cl", cocktail_id: 1, ingredient_id: 6)
-Dose.create(description: "2 cl", cocktail_id: 2, ingredient_id: 7)
-Dose.create(description: "2 cl", cocktail_id: 2, ingredient_id: 8)
-Dose.create(description: "2 cl", cocktail_id: 2, ingredient_id: 9)
-Dose.create(description: "2 cl", cocktail_id: 2, ingredient_id: 10)
-Dose.create(description: "2 cl", cocktail_id: 2, ingredient_id: 11)
-Dose.create(description: "2 cl", cocktail_id: 2, ingredient_id: 12)
-Dose.create(description: "2 cl", cocktail_id: 2, ingredient_id: 13)
-Dose.create(description: "2 cl", cocktail_id: 2, ingredient_id: 14)
-
+Cocktail.create(name: "Secret", description: "Full of surprises")
+Cocktail.create(name: "Mojito Thai", description: "Exotic Mojito")

@@ -1,24 +1,21 @@
 <div class="jumbotron jumbotron-fluid border-bottom border-warning">
   <div class="container">
-    <h1 class="display-1 text-warning text-right">Velvet</h1>
-    <h2 class="text-warning text-right">Taste</h2>
+    <h1 class="display-1 text-warning text-right">VELVET</h1>
+    <p class="text-warning text-right"></p>
   </div>
 </div>
-<div class="index">
-  <div class="container py-3">
-    <div class="row">
-      <% @cocktails.each do |cocktail| %>
-        <div class="col-4">
-          <div class="card my-2" style="width: 18rem;">
-            <img class="card-img-top" src="https://www.remymartin.com/wp-content/uploads/2016/07/15_Sidecar-2-1024x524.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"><%= cocktail.name %></h5>
-              <p class="card-text"><%= Ingredient.find(cocktail.id).name %>.</p>
-              <%= link_to "More info", cocktail_path(cocktail) %>
-            </div>
-          </div>
-        </div>
+
+<ul class="card1-list">
+  <h2 class="display-2">SIGNATURES</h2>
+  <% @cocktails.each do |cocktail| %>
+    <li class="card1">
+      <%= link_to cocktail_path(cocktail), class: "card1-image" do %>
+        <%= image_tag "https://www.unitedstatesofparis.com/wp-content/uploads/2017/12/Secret-8-by-Buddha-Bar-Paris-cocktail-Snowy-Venezia-prosecco-punt-mes-ginger-beer-sirop-maison-saveurs-vin-chaud-hoto-usofparis-blog.jpg" %>
       <% end %>
-    </div>
-  </div>
-</div>
+      <%= link_to cocktail_path(cocktail), class: "card1-description" do %>
+        <h2><%= cocktail.name.upcase %></h2>
+        <p><%= cocktail.description %></p>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
