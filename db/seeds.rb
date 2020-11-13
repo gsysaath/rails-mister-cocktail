@@ -19,4 +19,5 @@ arr.sort.each do |ingredient|
   Ingredient.create(name: ingredient)
 end
 
-Cocktail.new(name: "Parisian Bash", description: "A unique digestive")
+
+cocktail1 = Cocktail.create(name: "Secret", description: "Full of surprises")
