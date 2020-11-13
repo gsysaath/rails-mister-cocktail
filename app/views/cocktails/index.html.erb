@@ -1,0 +1,24 @@
+<div class="jumbotron jumbotron-fluid border-bottom border-warning">
+  <div class="container">
+    <h1 class="display-1 text-warning text-right">Velvet</h1>
+    <h2 class="text-warning text-right">Taste</h2>
+  </div>
+</div>
+<div class="index">
+  <div class="container py-3">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-4">
+          <div class="card my-2" style="width: 18rem;">
+            <img class="card-img-top" src="https://www.remymartin.com/wp-content/uploads/2016/07/15_Sidecar-2-1024x524.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><%= cocktail.name %></h5>
+              <p class="card-text"><%= Ingredient.find(cocktail.id).name %>.</p>
+              <%= link_to "More info", cocktail_path(cocktail) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

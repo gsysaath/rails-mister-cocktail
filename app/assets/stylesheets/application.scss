@@ -11,3 +11,40 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap');
+
+
+body, h1, h2, h3, h4 {
+  font-family: 'Xanh Mono', monospace;
+}
+
+p {
+  font-family: 'Anton', sans-serif;
+}
+
+.navbar {
+  background-color: #f5f3f4;
+}
+
+.index {
+  background-color: #f5f3f4;
+}
+
+
+.jumbotron {
+  background-color: #f5f3f4;
+  margin-bottom: 0px;
+}
+
+.text-blue {
+  color: #003249;
+}
+
+.text-red {
+  color: #9a031e;
+}
+
+.text-orange {
+  color: #ef8354;
+}
